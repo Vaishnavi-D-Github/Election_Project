@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Election Results</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style_results.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h1>Election Results</h1>
+        <ul class="candidate-list">
+            {% for candidate, votes in vote_count.items() %}
+                <li class="candidate-item">{{ candidate }}: {{ votes }} votes</li>
+            {% endfor %}
+        </ul>
+        <div class="button-container">
+            <form method="POST">
+                <button type="submit" class="reset-button">Reset Election</button>
+            </form>
+            <a href="/" class="home-button">Go Home</a>
+        </div>
+    </div>
+</body>
+</html>

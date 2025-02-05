@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Add Candidates</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style_add.css') }}">
+
+</head>
+<body>
+    <h1>Add Candidates for the Election</h1>
+    <form method="POST">
+        <label for="num_candidates">Number of Candidates:</label>
+        <input type="number" id="num_candidates" name="num_candidates" required>
+        <br><br>
+        <div id="candidate_names"></div>
+        <button type="submit" id="submit_button" disabled>Submit Candidates</button>
+    </form>
+
+    <script>
+        const numCandidatesInput = document.getElementById('num_candidates');
+        const candidateNamesDiv = document.getElementById('candidate_names');
+        const submitButton = document.getElementById('submit_button');
+
+        numCandidatesInput.addEventListener('input', () => {
+            candidateNamesDiv.innerHTML = ''; // Clear previous inputs
+            const numCandidates = parseInt(numCandidatesInput.value) || 0;
+
+            for (let i = 0; i < numCandidates; i++) {
+                const label = document.createElement('label');
+                label.setAttribute('for', `candidate_${i}`);
+                label.textContent = `Candidate ${i + 1}:`;
+
+                const input = document.createElement('input');
+                input.setAttribute('type', 'text');
+                input.setAttribute('id', `candidate_${i}`);
+                input.setAttribute('name', `candidate_${i}`);
+                input.required = true;
+
+                candidateNamesDiv.appendChild(label);
+                candidateNamesDiv.appendChild(input);
+                candidateNamesDiv.appendChild(document.createElement('br'));
+            }
+
+            submitButton.disabled = numCandidates === 0;
+        });
+    </script>
+</body>
+</html>

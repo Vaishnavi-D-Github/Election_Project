@@ -1,0 +1,65 @@
+/* General styles for the body */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f9f9f9;
+    margin: 0;
+    padding: 20px;
+    color: #333;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+
+/* Styling for the message container */
+.message-container {
+    max-width: 600px;
+    padding: 20px;
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+/* Styling for the header */
+.message-container h1 {
+    font-size: 2.5em;
+    color: #007BFF;
+    margin-bottom: 20px;
+    margin-bottom: 40px;
+}
+
+/* Styling for the return link */
+.message-container .button {
+    display: inline-block;
+    text-decoration: none;
+    background-color: #6c757d;
+    color: white;
+    padding: 10px 15px;
+    margin-top: 20px;
+    border-radius: 4px;
+    font-size: 1.2em;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+    margin-top: 20px;
+}
+
+.message-container .button:hover {
+    background-color: #5a6268;
+}
+
+/* Adding responsiveness */
+@media (max-width: 600px) {
+    .message-container {
+        padding: 15px;
+    }
+
+    .message-container h1 {
+        font-size: 2em;
+    }
+
+    .message-container .button {
+        font-size: 1em;
+    }
+}

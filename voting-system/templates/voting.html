@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Voting</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style_voting.css') }}">
+
+</head>
+<body>
+    <h1>Voting Page</h1>
+    <form method="POST">
+        <label for="electionId">Election ID:</label>
+        <input type="text" id="electionId" name="election_id" required>
+        <br><br>
+        <h2>Vote for Your Candidate</h2>
+        {% for candidate in candidates %}
+    <input type="radio" id="candidate{{ loop.index0 }}" name="vote" value="{{ loop.index0 }}" required>
+    <label for="candidate{{ loop.index0 }}">{{ candidate }}</label>
+    <br>
+{% endfor %}
+
+        <button type="submit">Submit Vote</button>
+    </form>
+    <!-- <form action="{{ url_for('results') }}" method="get">
+        <button type="submit">Check Election Results</button>
+    </form> -->
+    <a href="/">Go to Home</a>
+</body>
+</html>

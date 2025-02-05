@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Setup Election</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+
+</head>
+<body>
+    <h1>Election Setup</h1>
+    <form action="/setup" method="POST">
+        <label>Enter Candidate Names:</label><br>
+        <input type="text" name="candidates" placeholder="Candidate 1" required><br>
+        <input type="text" name="candidates" placeholder="Candidate 2" required><br>
+        <input type="text" name="candidates" placeholder="Candidate 3"><br>
+        <button type="submit">Start Election</button>
+    </form>
+</body>
+</html>

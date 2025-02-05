@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Election Commissioner</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+
+</head>
+<body>
+    <h1>Welcome to the Election Commissioner Page</h1>
+    <h2>Candidates:</h2>
+    <ul>
+        <a href="/add_candidates">Add Candidates</a>
+        {% for candidate in candidates %}
+            <p>{{ candidate }}</p>
+        {% endfor %}
+
+    </ul>
+    <a href="/voting">Go to Voting Page</a>
+    <a href="/results">View Results</a>
+</body>
+</html>
